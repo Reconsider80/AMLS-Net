@@ -1,0 +1,30 @@
+# Multi-lesion fundus config (IDRiD / DDR / ADAM)
+# Paper: 960x960, batch size 3
+
+seed: 42
+work_dir: runs/amls_net_fundus
+
+train_image_dir: data/IDRiD/train/images
+train_mask_dir: data/IDRiD/train/masks
+val_image_dir: data/IDRiD/test/images
+val_mask_dir: data/IDRiD/test/masks
+test_image_dir: data/IDRiD/test/images
+test_mask_dir: data/IDRiD/test/masks
+
+img_size: 960
+batch_size: 3
+num_workers: 4
+in_chans: 3
+num_classes: 5   # bg + MA/HE/EX/SE
+
+dims: [64, 128, 256, 512]
+sa_depths: [2, 2]
+vssk_depths: [2, 2]
+fuse_dim: 128
+drop: 0.1
+no_kan: false
+
+lr: 0.0002
+min_lr: 0.00001
+weight_decay: 0.0001
+epochs: 300
